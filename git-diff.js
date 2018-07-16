@@ -14,13 +14,13 @@ async function getGitBranchDiff(folder) {
 }
 
 function getChanges(lines) {
-  const changeIndicatorRegex = /@@ (.+) (.+) @@/;
+  const changeIndicatorRegex = /@@ -(.+) +(.+) @@/;
   return lines
     .filter(line => changeIndicatorRegex.test(line))
     .map(line => changeIndicatorRegex.exec(line))
     .map(matches => ({
-      removed: matches[1].replace("-", ""),
-      added: matches[2].replace("+", "")
+      removed: matches[1],
+      added: matches[2]
     }));
 }
 

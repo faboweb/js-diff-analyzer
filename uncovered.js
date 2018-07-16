@@ -24,8 +24,6 @@ function parseChangesRequiringCoverage({ fileName, changes }) {
 }
 
 function getUncoveredChanges(changesRequiringCoverage, uncoveredCode) {
-  console.log(uncoveredCode);
-  console.log(changesRequiringCoverage);
   return changesRequiringCoverage
     .map(({ fileName, lines }) => {
       let file = uncoveredCode.find(({ file }) => file === fileName);
