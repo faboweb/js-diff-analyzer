@@ -2,5 +2,15 @@
   "name": "coverage-analyzer",
   "version": "0.0.1",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "cli": "^1.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "author": "Fabian Weber",
+  "description": "",
+  "bin": {
+    "diff-analyzer": "cli.js"
+  }
 }

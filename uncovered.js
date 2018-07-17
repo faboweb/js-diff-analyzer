@@ -42,8 +42,8 @@ function getUncoveredChanges(changesRequiringCoverage, uncoveredCode) {
     .filter(({ uncoveredChanges }) => uncoveredChanges.length > 0);
 }
 
-async function main() {
-  const changes = await gitDiff(folder);
+module.exports = async function main({ referenceBranch, projectRootFolder }) {
+  const changes = await gitDiff(projectRootFolder, referenceBranch);
   const changesRequiringCoverage = changes
     .map(parseChangesRequiringCoverage)
     .filter(({ lines }) => lines.length > 0);
@@ -67,6 +67,4 @@ async function main() {
     process.exit(1);
   }
   process.exit(0);
-}
-
-return main();
+};

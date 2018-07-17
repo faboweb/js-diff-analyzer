@@ -1,11 +1,11 @@
 const util = require("util");
 const exec = util.promisify(require("child_process").exec);
 
-async function getGitBranchDiff(folder) {
+async function getGitBranchDiff(rootFolder, referenceBranch) {
   const { stdout, stderr } = await exec(
-    "git --no-pager diff origin/develop --unified=0",
+    `git --no-pager diff ${referenceBranch} --unified=0`,
     {
-      cwd: folder
+      cwd: rootFolder
     }
   );
   process.stderr = stderr;
@@ -56,8 +56,8 @@ function notEmpty(x) {
   return x !== null && x !== undefined;
 }
 
-module.exports = async function(folder) {
-  const branchDiff = await getGitBranchDiff(folder);
+module.exports = async function(rootFolder, referenceBranch) {
+  const branchDiff = await getGitBranchDiff(rootFolder, referenceBranch);
 
   return branchDiff
     .split("diff --git ") // each file
