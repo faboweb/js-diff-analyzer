@@ -1,4 +1,5 @@
 # js-diff-analyzer
+
 Check if all of your changed code is covered by unit tests
 
 ## Install
@@ -6,6 +7,8 @@ Check if all of your changed code is covered by unit tests
 ```shell
 $ npm install -g js-diff-analyzer
 ```
+
+or
 
 ```shell
 $ yarn global add js-diff-analyzer
