@@ -1,6 +1,6 @@
 # js-diff-analyzer
 
-Check if all of your changed code is covered by unit tests
+Uses [Istanbul](https://istanbul.js.org/) code coverage reports to check if all of your changed code is covered by unit tests
 
 ## Install
 
@@ -16,7 +16,7 @@ $ yarn global add js-diff-analyzer
 
 ### Usage
 
-Run your tests in your project. Create coverage output via Istanbul in the `json` format. I.e. for Jest:
+Run your tests in your project. Create coverage output via Istanbul in the `json` format. I.e. for [Jest](https://jestjs.io/):
 
 ```shell
 $ jest --coverageReporters ['json'] --collectCoverage true --coverageDirectory './coverage'
