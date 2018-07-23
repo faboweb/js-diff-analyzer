@@ -11,6 +11,6 @@
   "author": "Fabian Weber",
   "description": "",
   "bin": {
-    "diff-analyzer": "cli.js"
+    "js-diff-analyzer": "cli.js"
   }
 }
